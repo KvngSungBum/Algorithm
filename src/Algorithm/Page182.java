@@ -17,12 +17,15 @@ public class Page182 {
         for(int i=0;i<n;i++){
             arr2[i] = sc.nextInt();
         }
-
+        sc.close();
         BubbleSort bs = new BubbleSort();
+
         for(int i=0;i<k;i++){
             bs.BubbleSort(arr1);
             bs.BubbleSort(arr2);
+            int temp = arr1[0];
             arr1[0] = arr2[n-1];
+            arr2[n-1]=temp;
         }
         int sum=0;
         for(int i=0;i< arr1.length;i++){

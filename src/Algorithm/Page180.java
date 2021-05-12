@@ -17,7 +17,7 @@ public class Page180 {
             grade_list[i] = grade;
             sc.nextLine();
         }
-
+        sc.close();
         for(int i=0;i<grade_list.length;i++){
             for(int j=0;j<grade_list.length-i-1;j++){
                 if(grade_list[j]>grade_list[j+1]){

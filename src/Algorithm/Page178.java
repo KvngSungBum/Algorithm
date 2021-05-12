@@ -10,7 +10,7 @@ public class Page178 {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
+        sc.close();
         BubbleSort bs = new BubbleSort();
         bs.BubbleSort(arr);
         for (int i = n-1; i >=0; i--) {
