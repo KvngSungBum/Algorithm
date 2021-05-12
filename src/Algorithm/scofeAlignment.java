@@ -13,9 +13,9 @@ public class scofeAlignment {
             for(int j=0;j<num;j++){
                 map[i][j]=sc.nextInt();
             }
-
         }
-        //size별로 count를 저장하는 배열
+        sc.close();
+        //size별로  count를 저장하는 배열
         int size[] = new int[num];
         int sum=0;
         for(int i=0;i<num;i++){
@@ -28,7 +28,7 @@ public class scofeAlignment {
         }
     }
     //volume안에 들어갈 수있는지 확인
-    public static int checkBox(int n,int size){
+    public static int checkBox(int n,int size){//n : mask size, size: map size
         int mask[][] = new int[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
