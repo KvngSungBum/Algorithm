@@ -8,8 +8,6 @@ class Information{
     int coordinateX;
     int coordinateY;
     String watched;
-
-    Information(){};
 }
 
 public class scofeContents {
@@ -34,12 +32,14 @@ public class scofeContents {
             for(int j=0;j<m;j++){
                 status[i][j] = sc.next();
             }
+            sc.nextLine();
         }
         String[][] contents = new String[n][m];
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 contents[i][j] = sc.next();
             }
+            sc.nextLine();
         }
         sc.close();
         //입력 끝
@@ -64,10 +64,6 @@ public class scofeContents {
                 arr.add(info);
             }
         }
-        /*for(int i=0;i<arr.size();i++){
-            System.out.print(arr.get(i).content + " "+arr.get(i).preference+" "+arr.get(i).coordinateX+" "+arr.get(i).coordinateY);
-            System.out.println();
-        }*/
         //arr내 객체 분류
         for(int i=0;i<arr.size();i++){
             if(arr.get(i).watched.equals("Y"))
@@ -75,27 +71,25 @@ public class scofeContents {
             else if(arr.get(i).watched.equals("O"))
                 arrO.add(arr.get(i));
         }
+        orderByPreference(arrY);
+        orderByPreference(arrO);
 
-        for(int i=0;i<arrY.size();i++){
-            for(int j=0;j<arrY.size()-i-1;j++){
-                if(arrY.get(j).preference>arrY.get(j+1).preference){
-                    Collections.swap(arrY,j,j+1);
+        printOutInfo(arrY);
+        printOutInfo(arrO);
+
+    }
+    public static void orderByPreference(ArrayList<Information> info){
+        for(int i=0;i<info.size();i++){
+            for(int j=0;j<info.size()-i-1;j++){
+                if(info.get(j).preference>info.get(j+1).preference){
+                    Collections.swap(info,j,j+1);
                 }
             }
         }
-        for(int i=0;i<arrO.size();i++){
-            for(int j=0;j<arrO.size()-i-1;j++){
-                if(arrO.get(j).preference>arrO.get(j+1).preference){
-                    Collections.swap(arrO,j,j+1);
-                }
-            }
-        }
-        for(int i=arrY.size()-1;i>=0;i--){
-            System.out.print(arrY.get(i).content + " "+arrY.get(i).preference+" "+arrY.get(i).coordinateX+" "+arrY.get(i).coordinateY);
-            System.out.println();
-        }
-        for(int i=arrO.size()-1;i>=0;i--){
-            System.out.print(arrO.get(i).content + " "+arrO.get(i).preference+" "+arrO.get(i).coordinateX+" "+arrO.get(i).coordinateY);
+    }
+    public static void printOutInfo(ArrayList<Information> info){
+        for(int i=info.size()-1;i>=0;i--){
+            System.out.print(info.get(i).content + " "+info.get(i).preference+" "+info.get(i).coordinateX+" "+info.get(i).coordinateY);
             System.out.println();
         }
     }
