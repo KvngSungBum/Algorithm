@@ -20,6 +20,7 @@ public class Page118 {
             }
             sc.nextLine();
         }
+        sc.close();
         System.out.println("Setting complete");
         boolean beenMap[][] = new boolean[map_r][map_c];
         //setting beenMap(1인 장소 false, 0인 장소 true)

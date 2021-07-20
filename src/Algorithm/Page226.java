@@ -20,7 +20,7 @@ public class Page226 {
         //mem 안 값이 0이면 그 값으로 해결 불가
         mem[0] = 0;
         for(int i=0;i<n;i++){
-            for(int j=0;j<m+1;)
+            //for(int j=0;j<m+1;)
         }
     }
 }
